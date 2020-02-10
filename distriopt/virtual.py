@@ -181,7 +181,7 @@ class VirtualNetwork(object):
         g = nx.MultiGraph()
 
         # filename can be the path to a file or the name of a local topology
-        if os.path.isfile(filename):
+        if os.path.isabs(filename):
             filepath=filename
         else:
             raise ValueError("Wrong file path")
@@ -198,7 +198,7 @@ class VirtualNetwork(object):
                 )
 
             for link in data["links"]:
-                u,v = link
+                u,v = link.split(" ")
                 devices = data["links"][link]["devices"]
                 rate = data["links"][link]["rate"]
 
