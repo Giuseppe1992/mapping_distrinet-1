@@ -199,7 +199,6 @@ class VirtualNetwork(object):
 
             for link in data["links"]:
                 u,v = link.split(" ")
-                devices = data["links"][link]["devices"]
                 rate = data["links"][link]["rate"]
 
                 g.add_edge(
