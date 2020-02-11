@@ -12,7 +12,7 @@ python setup.py install
 ```
 or
 ```python
-pip install git+https://github.com/atomassi/mapping_distrinet
+pip install git+https://github.com/Giuseppe1992/mapping_distrinet-1.git
 ```
 
 
