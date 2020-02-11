@@ -205,8 +205,7 @@ class VirtualNetwork(object):
                 g.add_edge(
                     u,
                     v,
-                    rate=rate,
-                    devices={u: devices[u], v: devices[v]},
+                    rate=rate
                 )
 
         return cls(nx.freeze(g))
