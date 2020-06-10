@@ -196,13 +196,12 @@ class PhysicalNetwork(object):
 
         for file in files:
             # filename can be the path to a file or the name of a local topology
-            filepath = (
-                file
-                if os.path.isabs(file)
-                else os.path.join(
-                    os.path.dirname(__file__), "instances", file + ".json"
-                )
-            )
+            if os.path.isabs(file):
+                filepath = file
+            elif os.path.isabs(file + ".json"):
+                filepath = file + ".json"
+            else:
+                filepath = os.path.join(os.path.dirname(__file__), "instances", file + ".json")
 
             with open(filepath) as f:
 
